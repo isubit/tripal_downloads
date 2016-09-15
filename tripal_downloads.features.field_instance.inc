@@ -10,8 +10,7 @@
 function tripal_downloads_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance:
-  // 'node-download-field_download_description'.
+  // Exported field_instance: 'node-download-field_download_description'.
   $field_instances['node-download-field_download_description'] = array(
     'bundle' => 'download',
     'default_value' => NULL,
@@ -40,7 +39,7 @@ function tripal_downloads_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -75,7 +74,7 @@ function tripal_downloads_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -110,7 +109,44 @@ function tripal_downloads_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 5,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-download-field_download_is_jbrowse_track'.
+  $field_instances['node-download-field_download_is_jbrowse_track'] = array(
+    'bundle' => 'download',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Check this to make the file available through the JBrowse API',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_download_is_jbrowse_track',
+    'label' => 'Expose as JBrowse Track?',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 3,
     ),
   );
 
@@ -176,7 +212,9 @@ function tripal_downloads_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Check this to make the file available through the JBrowse API');
   t('Description');
+  t('Expose as JBrowse Track?');
   t('File');
   t('Index');
   t('Organism');

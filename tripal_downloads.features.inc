@@ -21,7 +21,7 @@ function tripal_downloads_node_info() {
     'download' => array(
       'name' => t('Downloadable File'),
       'base' => 'node_content',
-      'description' => 'A file available for download, and optionally, on JBrowse',
+      'description' => t('A file available for download, and optionally, on JBrowse'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

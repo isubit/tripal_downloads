@@ -67,6 +67,7 @@ function tripal_downloads_downloads($organism) {
   $query->entityCondition('entity_type', 'node');
   $query->entityCondition('bundle', 'download');
   $query->propertyCondition('status', 1);
+  $query->fieldCondition('field_download_is_jbrowse_track', 'value', 1);
   $query->fieldCondition('field_download_organism', 'value', $organism->organism_id);
   $query->addTag('node_access');
 

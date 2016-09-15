@@ -10,23 +10,58 @@
 function tripal_downloads_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-download-field_download_algorithm'.
+  $field_instances['node-download-field_download_algorithm'] = array(
+    'bundle' => 'download',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Algorithm name, e.g. blast.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_download_algorithm',
+    'label' => 'Algorithm',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-download-field_download_description'.
   $field_instances['node-download-field_download_description'] = array(
     'bundle' => 'download',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Please provide all necessary information to allow someone to recreate the analysis, including materials and methods for collection of the source data and performing the analysis',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_download_description',
-    'label' => 'Description',
+    'label' => 'Materials & Methods (Description and/or Program Settings)',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -39,7 +74,7 @@ function tripal_downloads_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 13,
     ),
   );
 
@@ -50,9 +85,10 @@ function tripal_downloads_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
+        'module' => 'file',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'file_default',
         'weight' => 2,
       ),
     ),
@@ -74,7 +110,7 @@ function tripal_downloads_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -85,9 +121,10 @@ function tripal_downloads_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
+        'module' => 'file',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'file_default',
         'weight' => 3,
       ),
     ),
@@ -109,7 +146,7 @@ function tripal_downloads_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -126,10 +163,9 @@ function tripal_downloads_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -158,10 +194,11 @@ function tripal_downloads_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
+        'type' => 'list_default',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -180,6 +217,225 @@ function tripal_downloads_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-download-field_download_program'.
+  $field_instances['node-download-field_download_program'] = array(
+    'bundle' => 'download',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Program name, e.g. blastx, blastp, sim4, genscan. If the analysis was not derived from a software package, provide a very brief description of the pipeline or method.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_download_program',
+    'label' => 'Program, Pipeline Name or Method Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-download-field_download_programversion'.
+  $field_instances['node-download-field_download_programversion'] = array(
+    'bundle' => 'download',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Version description, e.g. TBLASTX 2.0MP-WashU [09-Nov-2000]. Enter \'n/a\' if no version is available or applicable.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_download_programversion',
+    'label' => 'Program, Pipeline or Method version',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-download-field_download_sourcename'.
+  $field_instances['node-download-field_download_sourcename'] = array(
+    'bundle' => 'download',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The name of the source data. This could be a file name, data set name or a small description for how the data was collected. For long descriptions use the description field below',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_download_sourcename',
+    'label' => 'Source Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-download-field_download_sourceuri'.
+  $field_instances['node-download-field_download_sourceuri'] = array(
+    'bundle' => 'download',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_download_sourceuri',
+    'label' => 'Source URI',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-download-field_download_sourceversion'.
+  $field_instances['node-download-field_download_sourceversion'] = array(
+    'bundle' => 'download',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If the source dataset has a version, include it here',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_download_sourceversion',
+    'label' => 'Source Version',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-download-field_download_timeexecuted'.
+  $field_instances['node-download-field_download_timeexecuted'] = array(
+    'bundle' => 'download',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => 0,
+        ),
+        'type' => 'date_default',
+        'weight' => 10,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_download_timeexecuted',
+    'label' => 'Time Executed',
+    'required' => 1,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '1900:2050',
+      ),
+      'type' => 'date_select',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-download-field_download_type'.
   $field_instances['node-download-field_download_type'] = array(
     'bundle' => 'download',
@@ -188,9 +444,10 @@ function tripal_downloads_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'list_default',
         'weight' => 1,
       ),
     ),
@@ -212,13 +469,26 @@ function tripal_downloads_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Algorithm');
+  t('Algorithm name, e.g. blast.');
   t('Check this to make the file available through the JBrowse API');
-  t('Description');
   t('Expose as JBrowse Track?');
   t('File');
+  t('If the source dataset has a version, include it here');
   t('Index');
+  t('Materials & Methods (Description and/or Program Settings)');
   t('Organism');
+  t('Please provide all necessary information to allow someone to recreate the analysis, including materials and methods for collection of the source data and performing the analysis');
+  t('Program name, e.g. blastx, blastp, sim4, genscan. If the analysis was not derived from a software package, provide a very brief description of the pipeline or method.');
+  t('Program, Pipeline Name or Method Name');
+  t('Program, Pipeline or Method version');
+  t('Source Name');
+  t('Source URI');
+  t('Source Version');
+  t('The name of the source data. This could be a file name, data set name or a small description for how the data was collected. For long descriptions use the description field below');
+  t('Time Executed');
   t('Track Type');
+  t('Version description, e.g. TBLASTX 2.0MP-WashU [09-Nov-2000]. Enter \'n/a\' if no version is available or applicable.');
 
   return $field_instances;
 }

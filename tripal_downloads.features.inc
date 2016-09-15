@@ -1,0 +1,32 @@
+<?php
+/**
+ * @file
+ * tripal_downloads.features.inc
+ */
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function tripal_downloads_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
+}
+
+/**
+ * Implements hook_node_info().
+ */
+function tripal_downloads_node_info() {
+  $items = array(
+    'download' => array(
+      'name' => t('JBrowse Track'),
+      'base' => 'node_content',
+      'description' => 'A track to display on JBrowse',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+  );
+  drupal_alter('node_info', $items);
+  return $items;
+}

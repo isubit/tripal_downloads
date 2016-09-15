@@ -1,0 +1,108 @@
+<?php
+/**
+ * @file
+ * Code for the Tripal JBrowse Tracks feature.
+ */
+
+include_once 'tripal_downloads.features.inc';
+
+function tripal_downloads_organism_field_allowed_values() {
+
+  $organisms = array();
+
+  $results = chado_query('SELECT * FROM {organism} ORDER BY genus, species');
+
+  while ($organism = $results->fetchObject()) {
+    $organisms[$organism->organism_id] = sprintf('%s %s (%s)', $organism->genus, $organism->species, $organism->common_name);
+  }
+
+  return $organisms;
+
+}
+
+function tripal_downloads_track_type_field_allowed_values() {
+
+  $track_types = array(
+    'bam' => 'BAM',
+    'vcf' => 'VCF'
+  );
+
+  return $track_types;
+
+}
+
+function _track_type_to_track_type_properties($track_type) {
+
+  $properties = array();
+
+  switch($track_type) {
+    case 'bam':
+      $properties = array(
+        'type' => 'JBrowse/View/Track/Alignments2',
+        'trackType' => 'JBrowse/View/Track/Alignments2',
+        'storeClass' => 'JBrowse/Store/SeqFeature/BAM',
+      );
+      break;
+    case 'vcf':
+      $properties = array(
+        'type' => 'JBrowse/View/Track/CanvasVariants',
+        'trackType' => 'JBrowse/View/Track/CanvasVariants',
+        'storeClass' => 'JBrowse/Store/SeqFeature/VCFTabix',
+      );
+      break;
+    default:
+      break;
+  }
+
+  return $properties;
+
+}
+
+/**
+ * Implements hook_downloads().
+ */
+function tripal_downloads_downloads($organism) {
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node');
+  $query->entityCondition('bundle', 'download');
+  $query->propertyCondition('status', 1);
+  $query->fieldCondition('field_download_organism', 'value', $organism->organism_id);
+  $query->addTag('node_access');
+
+  $results = $query->execute();
+
+  $node_ids = array();
+
+  if (!empty($results['node'])) {
+    $node_ids = array_keys($results['node']);
+  }
+
+  $data = array();
+
+  foreach (node_load_multiple($node_ids) as $node) {
+
+    $description = '';
+    if (!empty($node->field_download_description[LANGUAGE_NONE][0]['safe_value'])) {
+      $description = $node->field_download_description[LANGUAGE_NONE][0]['safe_value'];
+    }
+
+    $track_type_properties = _track_type_to_track_type_properties($node->field_download_type[LANGUAGE_NONE][0]['value']);
+
+    $track = array(
+      'category' => 'Tripal JBrowse Tracks',
+      'label' => 'Tripal_' . $node->title,
+      'key' => $node->title,
+      'urlTemplate' => file_create_url($node->field_download_file[LANGUAGE_NONE][0]['uri']),
+      'metadata' => array(
+        'Description' => $description,
+      )
+    ) + $track_type_properties;
+
+    $data[] = $track;
+
+  }
+
+  return $data;
+
+}

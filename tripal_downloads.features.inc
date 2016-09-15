@@ -19,9 +19,9 @@ function tripal_downloads_ctools_plugin_api($module = NULL, $api = NULL) {
 function tripal_downloads_node_info() {
   $items = array(
     'download' => array(
-      'name' => t('JBrowse Track'),
+      'name' => t('Downloadable File'),
       'base' => 'node_content',
-      'description' => 'A track to display on JBrowse',
+      'description' => 'A file available for download, and optionally, on JBrowse',
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

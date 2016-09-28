@@ -24,6 +24,8 @@ function tripal_downloads_track_type_field_allowed_values() {
 
   $track_types = array(
     'bam' => 'BAM',
+    'bed' => 'BED',
+    'gff3' => 'GFF3',
     'vcf' => 'VCF'
   );
 
@@ -41,6 +43,20 @@ function _download_type_to_track_type_properties($track_type) {
         'type' => 'JBrowse/View/Track/Alignments2',
         'trackType' => 'JBrowse/View/Track/Alignments2',
         'storeClass' => 'JBrowse/Store/SeqFeature/BAM',
+      );
+      break;
+    case 'bed':
+      $properties = array(
+        'type' => 'JBrowse/View/Track/CanvasFeatures',
+        'trackType' => 'JBrowse/View/Track/CanvasFeatures',
+        'storeClass' => 'JBrowse/Store/SeqFeature/BEDTabix',
+      );
+      break;
+    case 'gff3':
+      $properties = array(
+        'type' => 'JBrowse/View/Track/CanvasFeatures',
+        'trackType' => 'JBrowse/View/Track/CanvasFeatures',
+        'storeClass' => 'JBrowse/Store/SeqFeature/GFF3Tabix',
       );
       break;
     case 'vcf':

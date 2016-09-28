@@ -41,27 +41,27 @@ function tripal_downloads_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Organism */
-  $handler->display->display_options['fields']['field_jbrowse_track_organism']['id'] = 'field_jbrowse_track_organism';
-  $handler->display->display_options['fields']['field_jbrowse_track_organism']['table'] = 'field_data_field_jbrowse_track_organism';
-  $handler->display->display_options['fields']['field_jbrowse_track_organism']['field'] = 'field_jbrowse_track_organism';
+  $handler->display->display_options['fields']['field_download_organism']['id'] = 'field_download_organism';
+  $handler->display->display_options['fields']['field_download_organism']['table'] = 'field_data_field_download_organism';
+  $handler->display->display_options['fields']['field_download_organism']['field'] = 'field_download_organism';
   /* Field: Content: Description */
-  $handler->display->display_options['fields']['field_jbrowse_track_description']['id'] = 'field_jbrowse_track_description';
-  $handler->display->display_options['fields']['field_jbrowse_track_description']['table'] = 'field_data_field_jbrowse_track_description';
-  $handler->display->display_options['fields']['field_jbrowse_track_description']['field'] = 'field_jbrowse_track_description';
+  $handler->display->display_options['fields']['field_download_description']['id'] = 'field_download_description';
+  $handler->display->display_options['fields']['field_download_description']['table'] = 'field_data_field_download_description';
+  $handler->display->display_options['fields']['field_download_description']['field'] = 'field_download_description';
   /* Field: Content: Track Type */
-  $handler->display->display_options['fields']['field_jbrowse_track_type']['id'] = 'field_jbrowse_track_type';
-  $handler->display->display_options['fields']['field_jbrowse_track_type']['table'] = 'field_data_field_jbrowse_track_type';
-  $handler->display->display_options['fields']['field_jbrowse_track_type']['field'] = 'field_jbrowse_track_type';
+  $handler->display->display_options['fields']['field_download_type']['id'] = 'field_download_type';
+  $handler->display->display_options['fields']['field_download_type']['table'] = 'field_data_field_download_type';
+  $handler->display->display_options['fields']['field_download_type']['field'] = 'field_download_type';
   /* Field: Content: File */
-  $handler->display->display_options['fields']['field_jbrowse_track_file']['id'] = 'field_jbrowse_track_file';
-  $handler->display->display_options['fields']['field_jbrowse_track_file']['table'] = 'field_data_field_jbrowse_track_file';
-  $handler->display->display_options['fields']['field_jbrowse_track_file']['field'] = 'field_jbrowse_track_file';
-  $handler->display->display_options['fields']['field_jbrowse_track_file']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_download_file']['id'] = 'field_download_file';
+  $handler->display->display_options['fields']['field_download_file']['table'] = 'field_data_field_download_file';
+  $handler->display->display_options['fields']['field_download_file']['field'] = 'field_download_file';
+  $handler->display->display_options['fields']['field_download_file']['click_sort_column'] = 'fid';
   /* Field: Content: Index */
-  $handler->display->display_options['fields']['field_jbrowse_track_index']['id'] = 'field_jbrowse_track_index';
-  $handler->display->display_options['fields']['field_jbrowse_track_index']['table'] = 'field_data_field_jbrowse_track_index';
-  $handler->display->display_options['fields']['field_jbrowse_track_index']['field'] = 'field_jbrowse_track_index';
-  $handler->display->display_options['fields']['field_jbrowse_track_index']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_download_index']['id'] = 'field_download_index';
+  $handler->display->display_options['fields']['field_download_index']['table'] = 'field_data_field_download_index';
+  $handler->display->display_options['fields']['field_download_index']['field'] = 'field_download_index';
+  $handler->display->display_options['fields']['field_download_index']['click_sort_column'] = 'fid';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

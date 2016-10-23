@@ -117,9 +117,8 @@ function tripal_downloads_field_default_field_instances() {
   // Exported field_instance: 'node-download-field_download_index'.
   $field_instances['node-download-field_download_index'] = array(
     'bundle' => 'download',
-    'description' => 'For BAM, a .bam.bai file. For GFF3, a .gff3.gz.tbi file.',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'For BAM, a .bam.bai file. For GFF3, a .gff3.gz.tbi file.',
     'display' => array(
       'default' => array(
         'label' => 'above',

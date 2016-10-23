@@ -99,7 +99,7 @@ function tripal_downloads_field_default_field_instances() {
     'settings' => array(
       'description_field' => 0,
       'file_directory' => 'download',
-      'file_extensions' => 'gz bam',
+      'file_extensions' => 'bam bed gff3 gz vcf',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
@@ -117,6 +117,7 @@ function tripal_downloads_field_default_field_instances() {
   // Exported field_instance: 'node-download-field_download_index'.
   $field_instances['node-download-field_download_index'] = array(
     'bundle' => 'download',
+    'description' => 'For BAM, a .bam.bai file. For GFF3, a .gff3.gz.tbi file.',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -135,7 +136,7 @@ function tripal_downloads_field_default_field_instances() {
     'settings' => array(
       'description_field' => 0,
       'file_directory' => 'download',
-      'file_extensions' => 'bai tbi',
+      'file_extensions' => 'bai bam bed gff3 gz tbi vcf',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),

@@ -292,10 +292,7 @@ function tripal_downloads_field_default_field_bases() {
     'locked' => 0,
     'module' => 'list',
     'settings' => array(
-      'allowed_values' => array(
-        'bam' => 'BAM',
-        'vcf' => 'VCF',
-      ),
+      'allowed_values' => array(),
       'allowed_values_function' => 'tripal_downloads_track_type_field_allowed_values',
     ),
     'translatable' => 0,

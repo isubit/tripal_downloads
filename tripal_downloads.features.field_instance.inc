@@ -445,16 +445,15 @@ function tripal_downloads_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_download_type',
     'label' => 'Track Type',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -474,6 +473,7 @@ function tripal_downloads_field_default_field_instances() {
   t('Check this to make the file available through the JBrowse API');
   t('Expose as JBrowse Track?');
   t('File');
+  t('For BAM, a .bam.bai file. For GFF3, a .gff3.gz.tbi file.');
   t('If the source dataset has a version, include it here');
   t('Index');
   t('Materials & Methods (Description and/or Program Settings)');

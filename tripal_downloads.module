@@ -25,7 +25,6 @@ function tripal_downloads_track_type_field_allowed_values() {
   $track_types = array(
     'bam' => 'BAM',
     'bed' => 'BED',
-    'fasta' => 'FASTA',
     'gff3' => 'GFF3',
     'vcf' => 'VCF'
   );

@@ -105,14 +105,15 @@ function tripal_downloads_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Name';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Category */
+  $handler->display->display_options['fields']['field_download_category']['id'] = 'field_download_category';
+  $handler->display->display_options['fields']['field_download_category']['table'] = 'field_data_field_download_category';
+  $handler->display->display_options['fields']['field_download_category']['field'] = 'field_download_category';
+  $handler->display->display_options['fields']['field_download_category']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Organism */
   $handler->display->display_options['fields']['field_download_organism']['id'] = 'field_download_organism';
   $handler->display->display_options['fields']['field_download_organism']['table'] = 'field_data_field_download_organism';
   $handler->display->display_options['fields']['field_download_organism']['field'] = 'field_download_organism';
-  /* Field: Content: Track Type */
-  $handler->display->display_options['fields']['field_download_type']['id'] = 'field_download_type';
-  $handler->display->display_options['fields']['field_download_type']['table'] = 'field_data_field_download_type';
-  $handler->display->display_options['fields']['field_download_type']['field'] = 'field_download_type';
   /* Field: Content: Program, Pipeline Name or Method Name */
   $handler->display->display_options['fields']['field_download_program']['id'] = 'field_download_program';
   $handler->display->display_options['fields']['field_download_program']['table'] = 'field_data_field_download_program';
@@ -163,20 +164,6 @@ function tripal_downloads_views_default_views() {
   $handler->display->display_options['filters']['field_download_organism_value']['expose']['operator'] = 'field_download_organism_value_op';
   $handler->display->display_options['filters']['field_download_organism_value']['expose']['identifier'] = 'field_download_organism_value';
   $handler->display->display_options['filters']['field_download_organism_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  /* Filter criterion: Content: Track Type (field_download_type) */
-  $handler->display->display_options['filters']['field_download_type_value']['id'] = 'field_download_type_value';
-  $handler->display->display_options['filters']['field_download_type_value']['table'] = 'field_data_field_download_type';
-  $handler->display->display_options['filters']['field_download_type_value']['field'] = 'field_download_type_value';
-  $handler->display->display_options['filters']['field_download_type_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_download_type_value']['expose']['operator_id'] = 'field_download_type_value_op';
-  $handler->display->display_options['filters']['field_download_type_value']['expose']['label'] = 'Track Type';
-  $handler->display->display_options['filters']['field_download_type_value']['expose']['operator'] = 'field_download_type_value_op';
-  $handler->display->display_options['filters']['field_download_type_value']['expose']['identifier'] = 'field_download_type_value';
-  $handler->display->display_options['filters']['field_download_type_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,

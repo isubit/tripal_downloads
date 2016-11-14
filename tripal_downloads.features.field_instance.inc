@@ -22,7 +22,7 @@ function tripal_downloads_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -44,6 +44,36 @@ function tripal_downloads_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-download-field_download_category'.
+  $field_instances['node-download-field_download_category'] = array(
+    'bundle' => 'download',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 14,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_download_category',
+    'label' => 'Category',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-download-field_download_description'.
   $field_instances['node-download-field_download_description'] = array(
     'bundle' => 'download',
@@ -56,7 +86,7 @@ function tripal_downloads_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 11,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -89,7 +119,7 @@ function tripal_downloads_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -125,7 +155,7 @@ function tripal_downloads_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -165,7 +195,7 @@ function tripal_downloads_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',
@@ -182,7 +212,7 @@ function tripal_downloads_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -213,7 +243,7 @@ function tripal_downloads_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -229,7 +259,7 @@ function tripal_downloads_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -263,7 +293,7 @@ function tripal_downloads_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -297,7 +327,7 @@ function tripal_downloads_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -331,7 +361,7 @@ function tripal_downloads_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -365,7 +395,7 @@ function tripal_downloads_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -405,7 +435,7 @@ function tripal_downloads_field_default_field_instances() {
           'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
-        'weight' => 10,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
@@ -447,7 +477,7 @@ function tripal_downloads_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -462,7 +492,7 @@ function tripal_downloads_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 5,
     ),
   );
 
@@ -470,6 +500,7 @@ function tripal_downloads_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Algorithm');
   t('Algorithm name, e.g. blast.');
+  t('Category');
   t('Check this to make the file available through the JBrowse API');
   t('Expose as JBrowse Track?');
   t('File');

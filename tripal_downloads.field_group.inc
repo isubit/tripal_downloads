@@ -21,7 +21,7 @@ function tripal_downloads_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'JBrowse',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_download_is_jbrowse_track',
       1 => 'field_download_type',

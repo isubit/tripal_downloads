@@ -129,7 +129,7 @@ function tripal_downloads_field_default_field_instances() {
     'settings' => array(
       'description_field' => 0,
       'file_directory' => 'download',
-      'file_extensions' => 'bam bed fasta gff3 gz tar txt vcf zip',
+      'file_extensions' => 'bam bed bw fasta gff3 gz tar txt vcf zip',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),

@@ -34,7 +34,7 @@ function tripal_downloads_track_type_field_allowed_values() {
 
 }
 
-function _download_type_to_track_type_properties($track_type) {
+function _download_type_to_track_type_properties($track_type, $min_score, $max_score) {
 
   $properties = array();
 
@@ -59,6 +59,12 @@ function _download_type_to_track_type_properties($track_type) {
         'trackType' => 'JBrowse/View/Track/Wiggle/XYPlot',
         'storeClass' => 'JBrowse/Store/SeqFeature/BigWig',
       );
+      if (isset($min_score)){
+        $properties['min_score'] => $min_score;
+      }
+      if (isset($max_score)){
+        $properties['max_score'] => $max_score;
+      }
       break;
     case 'gff3':
       $properties = array(
@@ -111,7 +117,7 @@ function tripal_downloads_jbrowse_tracks($organism) {
       $description = $node->field_download_description[LANGUAGE_NONE][0]['safe_value'];
     }
 
-    $track_type_properties = _download_type_to_track_type_properties($node->field_download_type[LANGUAGE_NONE][0]['value']);
+    $track_type_properties = _download_type_to_track_type_properties($node->field_download_type[LANGUAGE_NONE][0]['value'],$node->field_download_min_score[LANGUAGE_NONE][0]['value'],$node->field_max_score[LANGUAGE_NONE][0]['value']);
 
     $category = 'Other';
 

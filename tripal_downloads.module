@@ -51,6 +51,9 @@ function _download_node_to_track_type_properties($node) {
         'type' => 'JBrowse/View/Track/CanvasFeatures',
         'trackType' => 'JBrowse/View/Track/CanvasFeatures',
         'storeClass' => 'JBrowse/Store/SeqFeature/BEDTabix',
+        'style' => array(
+          '_defaultLabelScale' => 120,
+        ),
       );
       break;
     case 'bw':
@@ -71,6 +74,9 @@ function _download_node_to_track_type_properties($node) {
         'type' => 'JBrowse/View/Track/CanvasFeatures',
         'trackType' => 'JBrowse/View/Track/CanvasFeatures',
         'storeClass' => 'JBrowse/Store/SeqFeature/GFF3Tabix',
+        'style' => array(
+          '_defaultLabelScale' => 120,
+        ),
       );
       break;
     case 'vcf':

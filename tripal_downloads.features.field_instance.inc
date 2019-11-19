@@ -165,7 +165,7 @@ function tripal_downloads_field_default_field_instances() {
     'settings' => array(
       'description_field' => 0,
       'file_directory' => 'download',
-      'file_extensions' => 'bai bam bed gff3 gz tbi vcf',
+      'file_extensions' => 'bai bam bed gff3 gz tbi vcf fai',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
@@ -213,6 +213,123 @@ function tripal_downloads_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-download-field_download_jbrowse_extra'.
+  $field_instances['node-download-field_download_jbrowse_extra'] = array(
+    'bundle' => 'download',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter a JSON object here if you want to override default track properties or add additional ones.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 17,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_download_jbrowse_extra',
+    'label' => 'JBrowse Extra Track Properties',
+    'placeholder' => '',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-download-field_download_max_score'.
+  $field_instances['node-download-field_download_max_score'] = array(
+    'bundle' => 'download',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Optional jbrowse track scale. Track will default to autoscale if this field is not set.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 16,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_download_max_score',
+    'label' => 'max_score',
+    'placeholder' => '',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-download-field_download_min_score'.
+  $field_instances['node-download-field_download_min_score'] = array(
+    'bundle' => 'download',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Optional jbrowse track scale. Track will default to autoscale if this field is not set.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 15,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_download_min_score',
+    'label' => 'min_score',
+    'placeholder' => '',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 6,
     ),
   );
 
@@ -496,100 +613,21 @@ function tripal_downloads_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-download-field_download_max_score'.
-  $field_instances['node-download-field_download_max_score'] = array(
-    'bundle' => 'download',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Optional jbrowse track scale. Track will default to autoscale if this field is not set.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => '',
-        ),
-        'type' => 'number_decimal',
-        'weight' => 16,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_download_max_score',
-    'label' => 'max_score',
-    'placeholder' => '',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 42,
-    ),
-  );
-
-  // Exported field_instance: 'node-download-field_download_min_score'.
-  $field_instances['node-download-field_download_min_score'] = array(
-    'bundle' => 'download',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Optional jbrowse track scale. Track will default to autoscale if this field is not set.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => '',
-        ),
-        'type' => 'number_decimal',
-        'weight' => 15,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_download_min_score',
-    'label' => 'min_score',
-    'placeholder' => '',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 41,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Algorithm');
   t('Algorithm name, e.g. blast.');
   t('Category');
   t('Check this to make the file available through the JBrowse API');
+  t('Enter a JSON object here if you want to override default track properties or add additional ones.');
   t('Expose as JBrowse Track?');
   t('File');
   t('For BAM, a .bam.bai file. For GFF3, a .gff3.gz.tbi file.');
   t('If the source dataset has a version, include it here');
   t('Index');
+  t('JBrowse Extra Track Properties');
   t('Materials & Methods (Description and/or Program Settings)');
+  t('Optional jbrowse track scale. Track will default to autoscale if this field is not set.');
   t('Organism');
   t('Please provide all necessary information to allow someone to recreate the analysis, including materials and methods for collection of the source data and performing the analysis');
   t('Program name, e.g. blastx, blastp, sim4, genscan. If the analysis was not derived from a software package, provide a very brief description of the pipeline or method.');
@@ -602,7 +640,6 @@ function tripal_downloads_field_default_field_instances() {
   t('Time Executed');
   t('Track Type');
   t('Version description, e.g. TBLASTX 2.0MP-WashU [09-Nov-2000]. Enter \'n/a\' if no version is available or applicable.');
-  t('Optional jbrowse track scale. Track will default to autoscale if this field is not set.');
   t('max_score');
   t('min_score');
 

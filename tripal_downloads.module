@@ -140,9 +140,18 @@ function tripal_downloads_jbrowse_tracks($organism) {
       'metadata' => array(
         'Description' => $description,
       )
-    ) + $track_type_properties;
+    );
 
-    $data[] = $track;
+    $extra = array();
+    
+    if (!empty($node->field_download_jbrowse_extra[LANGUAGE_NONE][0]['safe_value'])) {
+      $maybe_extra = drupal_json_decode($node->field_download_jbrowse_extra[LANGUAGE_NONE][0]['safe_value']);
+      if (is_array($maybe_extra)) {
+        $extra = $maybe_extra;
+      }
+    }
+
+    $data[] = $extra + $track + $track_type_properties;
 
   }
 

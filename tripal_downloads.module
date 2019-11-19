@@ -143,9 +143,9 @@ function tripal_downloads_jbrowse_tracks($organism) {
     );
 
     $extra = array();
-    
-    if (!empty($node->field_download_jbrowse_extra[LANGUAGE_NONE][0]['safe_value'])) {
-      $maybe_extra = drupal_json_decode($node->field_download_jbrowse_extra[LANGUAGE_NONE][0]['safe_value']);
+
+    if (!empty($node->field_download_jbrowse_extra[LANGUAGE_NONE][0]['value'])) {
+      $maybe_extra = drupal_json_decode($node->field_download_jbrowse_extra[LANGUAGE_NONE][0]['value']);
       if (is_array($maybe_extra)) {
         $extra = $maybe_extra;
       }

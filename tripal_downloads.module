@@ -158,3 +158,25 @@ function tripal_downloads_jbrowse_tracks($organism) {
   return $data;
 
 }
+
+/**
+ * Implements hook_jbrowse_tracklist_alter().
+ */
+function tripal_downloads_jbrowse_tracklist_alter(&$data, $organism) {
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node');
+  $query->entityCondition('bundle', 'download');
+  $query->propertyCondition('status', 1);
+  $query->fieldCondition('field_download_is_jbrowse_track', 'value', 1);
+  $query->fieldCondition('field_download_is_default_track', 'value', 1);
+  $query->fieldCondition('field_download_organism', 'value', $organism->organism_id);
+
+  $results = $query->execute();
+
+  if (!empty($results['node'])) {
+    $node_ids = implode(',', array_keys($results['node']));
+    $data['defaultTracks'] = implode(',', array($data['defaultTracks'], $node_ids));
+  }
+
+}

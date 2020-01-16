@@ -56,7 +56,7 @@ function tripal_downloads_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 14,
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
@@ -180,6 +180,43 @@ function tripal_downloads_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-download-field_download_is_default_track'.
+  $field_instances['node-download-field_download_is_default_track'] = array(
+    'bundle' => 'download',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Check this to make this file a default track for its organism',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 17,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_download_is_default_track',
+    'label' => 'Default Track?',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-download-field_download_is_jbrowse_track'.
   $field_instances['node-download-field_download_is_jbrowse_track'] = array(
     'bundle' => 'download',
@@ -195,7 +232,7 @@ function tripal_downloads_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'node',
@@ -225,10 +262,9 @@ function tripal_downloads_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 17,
+        'type' => 'hidden',
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',
@@ -247,7 +283,7 @@ function tripal_downloads_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -268,7 +304,7 @@ function tripal_downloads_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
-        'weight' => 16,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',
@@ -309,7 +345,7 @@ function tripal_downloads_field_default_field_instances() {
           'thousand_separator' => '',
         ),
         'type' => 'number_decimal',
-        'weight' => 15,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -594,7 +630,7 @@ function tripal_downloads_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 15,
       ),
     ),
     'entity_type' => 'node',
@@ -619,6 +655,8 @@ function tripal_downloads_field_default_field_instances() {
   t('Algorithm name, e.g. blast.');
   t('Category');
   t('Check this to make the file available through the JBrowse API');
+  t('Check this to make this file a default track for its organism');
+  t('Default Track?');
   t('Enter a JSON object here if you want to override default track properties or add additional ones.');
   t('Expose as JBrowse Track?');
   t('File');

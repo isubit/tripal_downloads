@@ -23,11 +23,12 @@ function tripal_downloads_field_group_info() {
     'label' => 'JBrowse',
     'weight' => '3',
     'children' => array(
-      0 => 'field_download_max_score',
+      0 => 'field_download_is_default_track',
       1 => 'field_download_jbrowse_extra',
-      2 => 'field_download_type',
+      2 => 'field_download_max_score',
       3 => 'field_download_min_score',
-      4 => 'field_download_is_jbrowse_track',
+      4 => 'field_download_type',
+      5 => 'field_download_is_jbrowse_track',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
